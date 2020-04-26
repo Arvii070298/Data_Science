@@ -21,8 +21,7 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import allegiance_csv;
-import CreateIndex;
+
 import co.nstant.in.cbor.CborException;
 import co.nstant.in.cbor.model.Array;
 import edu.unh.cs.treccar_v2.Data;
