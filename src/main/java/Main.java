@@ -256,8 +256,8 @@ public class Main {
 		Gender_tfidf gend_obj= new Gender_tfidf();
 		gend_obj.do_funct(1,args[0],args[1],args[2]);
 		gend_obj.do_funct(2,args[0],args[1],args[2]);
-count obj= new count();
-    obj.do_funct(args[1],args[0],args[2]);
+count c_obj= new count();
+    c_obj.do_funct(args[1],args[0],args[2]);
 
 
 entity ent_obj= new entity();
