@@ -1,6 +1,6 @@
 CS953 Submission 3 
 
-For program to work, dowmload the following files: 
+For program to work, download the following files: 
 install.sh, run.sh and runJava.sh
 
 To install the necessary libraries  
