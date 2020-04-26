@@ -21,7 +21,6 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-
 import co.nstant.in.cbor.CborException;
 import co.nstant.in.cbor.model.Array;
 import edu.unh.cs.treccar_v2.Data;
@@ -72,7 +71,7 @@ public class allegiance_predictor {
 }
 	
 	
-	public static void do_funct(String csvtest, String csvtrain,String cbor) throws CborException, IOException, ParseException {
+	public static void do_funct(String csvtest, String csvtrain,String cbor,String web_cs) throws CborException, IOException, ParseException {
 		String csvFile[] = new String[2];
 		csvFile[0] = csvtrain;
 		csvFile[1] = csvtest;
@@ -97,7 +96,7 @@ public class allegiance_predictor {
 
 		HashMap<String, String> web_csv = new HashMap<String, String>();
 		web_csv web = new web_csv();
-		web_csv = web.read_csv("");
+		web_csv = web.read_csv(web_cs);
 		ArrayList<HashMap<String, String>> map_list = new ArrayList<HashMap<String, String>>();
 
 		allegiance_csv alleg_obj = new allegiance_csv();
