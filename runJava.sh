@@ -7,5 +7,5 @@ mvn clean install
 
 wget "http://www.cs.unh.edu/~dietz/download/got.cbor"
 
-java -jar target/project-1.0-SNAPSHOT-jar-with-dependencies.jar deaths-train.csv deaths-test.csv got.cbor Text/
+java -jar target/project-1.0-SNAPSHOT-jar-with-dependencies.jar deaths-train.csv deaths-test.csv got.cbor Text/ webscrapping.csv
 
