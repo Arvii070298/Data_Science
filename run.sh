@@ -1,3 +1,7 @@
+git clone https://gitlab.cs.unh.edu/cs953-spring-2020/team07-submission03.git
+cd team07-submission03
+
+
 python Final_DT.py
 python Final_KNN.py
 python Final_BC.py
