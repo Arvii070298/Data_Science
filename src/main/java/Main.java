@@ -32,7 +32,7 @@ import org.apache.lucene.store.FSDirectory;
 import co.nstant.in.cbor.CborException;
 import edu.unh.cs.treccar_v2.Data;
 
-public class Main {
+public class Main throws Exception{
 
 	static final String INDEX_DIR = "lucene_index/dir";
 	// static final String CBOR_FILE = "D:/got.cbor";
