@@ -252,7 +252,7 @@ public class Main {
 		csv1.do_funct();
         
 		 allegiance_predictor alle_obj= new allegiance_predictor();
-		 alle_obj.do_funct(args[1],args[0],args[2]);
+		 alle_obj.do_funct(args[1],args[0],args[2],args[4]);
 		
 
 
