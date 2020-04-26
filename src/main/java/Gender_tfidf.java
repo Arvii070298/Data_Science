@@ -222,10 +222,10 @@ public class Gender_tfidf {
 		System.out.println(fi.size()); 
 		gender_csv gend_obj= new gender_csv();
 		if(qwe==1) {
-		gend_obj.writer(fi,"gender_tfidf_train.csv",traincsv);
+		gend_obj.writer(fi,"gender_tf_train.csv",traincsv);
 		}
 		if(qwe==2) {
-			gend_obj.writer(fi,"gender_tfidf_test.csv",testcsv);
+			gend_obj.writer(fi,"gender_tf_test.csv",testcsv);
 
 		}
 
