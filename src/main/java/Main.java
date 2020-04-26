@@ -261,7 +261,7 @@ count c_obj= new count();
 
 
 entity ent_obj= new entity();
-ent_obj.do_funct(args[2]);
+//ent_obj.do_funct(args[2]);
 
 
 
