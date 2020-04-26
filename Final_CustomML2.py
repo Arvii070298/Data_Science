@@ -16,7 +16,7 @@ data_train = pd.read_csv('gender_tf.csv')
 # In[262]:
 
 
-data_test = pd.read_csv('gender_tf_testt.csv')
+data_test = pd.read_csv('gender_tf_test.csv')
 
 
 # In[ ]:
