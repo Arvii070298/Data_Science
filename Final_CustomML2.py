@@ -100,7 +100,7 @@ X
 # In[196]:
 
 
-Y = data['gender']
+Y = data_train['gender']
 
 
 # In[197]:
