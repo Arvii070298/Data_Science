@@ -121,7 +121,7 @@ public class allegiance_predictor {
 			obj.indexAllParas();
 			count++;
 
-			// count of house names
+		/*	// count of house names
 			for (HashMap.Entry<String, String> entry : Map.entrySet()) {
 				strings = obj.doSearch(entry.getKey(), 30);
 				for (int i = 0; i < strings.size(); i++) {
@@ -139,7 +139,7 @@ public class allegiance_predictor {
 				}
 
 			}
-			size.add(count);
+			size.add(count);*/
 
 			Map.keySet().removeAll(alleg_predict.keySet());
 
