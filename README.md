@@ -13,4 +13,6 @@ sh runJava.sh
 
 Run Python files  
 chmod 777 run.sh  
-sh run.sh
+sh run.sh  
+
+Files have to be run in the following order only. 
