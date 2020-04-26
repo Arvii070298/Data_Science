@@ -1,4 +1,4 @@
-package assign1;
+
 import java.util.Arrays;
 
 public class StringEqualityPercentCheckUsingJaroWinklerDistance {
