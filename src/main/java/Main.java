@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -251,8 +250,13 @@ public class Main {
 		csv.do_funct();
 		csv_wr1 csv1=new csv_wr1();
 		csv1.do_funct();
+        
+		 allegiance_predictor alle_obj= new allegiance_predictor();
+		 alle_obj.do_funct(args[1],args[0],args[2]);
+		Gender_tfidf gend_obj= new Gender_tfidf();
+		gend_obj.do_funct(1,args[0],args[1],args[2]);
 
-
+			gend_obj.do_funct(2,args[0],args[1],args[2]);
 
 
 
