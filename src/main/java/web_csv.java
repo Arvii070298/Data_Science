@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +10,6 @@ public class web_csv {
 	public static HashMap<String, String> read_csv(String file) throws IOException {
 		HashMap<String, String> csv_map = new HashMap<String, String>();
 		ArrayList<String> list= new ArrayList<String>();
-		file = "C:/Users/Sai Arvind/Downloads/webscrapping.csv";
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
