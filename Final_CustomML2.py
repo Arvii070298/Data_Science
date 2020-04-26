@@ -76,13 +76,13 @@ data_test
 # In[259]:
 
 
-X = data.drop(['Name'], axis=1)
+X = data_train.drop(['Name'], axis=1)
 
 
 # In[257]:
 
 
-data
+data_train
 
 
 # In[194]:
