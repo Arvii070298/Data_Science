@@ -1,4 +1,6 @@
 
+
+
 import java.awt.List;
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +36,7 @@ import edu.unh.cs.treccar_v2.read_data.DeserializeData;
 public class CreateIndex {
 
 	static final String INDEX_DIR = "lucene_index/dir";
-	static final String CBOR_FILE = "C:/Users/Sai Arvind/Downloads/got.cbor";
+	//static final String CBOR_FILE = "C:/Users/Sai Arvind/Downloads/got.cbor";
 
 	private IndexSearcher is = null;
 	private QueryParser qp = null;
@@ -48,36 +50,32 @@ public class CreateIndex {
 	
 	
 	
-	public void indexAllParas() throws CborException, IOException {
+	public void indexAllParas(String CBOR_FILE) throws CborException, IOException {
 		Directory indexdir = FSDirectory.open((new File(INDEX_DIR)).toPath());
 		IndexWriterConfig conf = new IndexWriterConfig(new StandardAnalyzer());
 		conf.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
 		IndexWriter iw = new IndexWriter(indexdir, conf);
-		PrintWriter  myWriter = new PrintWriter ("filename.txt");
-		PrintWriter  myWriter1 = new PrintWriter ("names_car.txt");
-
-		int counter=0;
+		int count=0;
 		for (Data.Page p: DeserializeData.iterableAnnotations(new FileInputStream(new File(CBOR_FILE)))) {
-			myWriter1.write(p.getPageName());
 			//System.out.println(p);
-			if(counter==100) {
-				for(Data.Page.SectionPathParagraphs line: p.flatSectionPathsParagraphs()) {
-					
-					
-						myWriter1.println(line.getParagraph().getTextOnly());
-					
-				}
-				
-				
-					
+			/*
+			 * if(counter==100) { for(Data.Page.SectionPathParagraphs line:
+			 * p.flatSectionPathsParagraphs()) {
+			 * 
+			 * 
+			 * myWriter1.println(line.getParagraph().getTextOnly());
+			 * 
+			 * }
+			 * 
+			 * 
+			 * 
+			 * 
+			 * myWriter.println(p);}
+			 */
 			
-				myWriter.println(p);}
 				this.indexPara(iw, p);
-			counter++;
 		}
-		myWriter.close();
 		iw.close();	
-		myWriter1.close();
 		
 	}
 
@@ -89,7 +87,7 @@ public class CreateIndex {
 		iw.addDocument(paradoc);
 	}
 
-	public void doSearch(String qstring, int n) throws IOException, ParseException {
+	public ArrayList<String> doSearch(String qstring, int n) throws IOException, ParseException {
 		if (is == null) {
 			is = new IndexSearcher(DirectoryReader.open(FSDirectory.open((new File(INDEX_DIR).toPath()))));
 		}
@@ -122,32 +120,33 @@ public class CreateIndex {
 		TopDocs tds;
 		ScoreDoc[] retDocs;
 
-		System.out.println("Query: " + qstring);
+
+		//	System.out.println("Query: " + qstring);
 		q = qp.parse(qstring);
 		tds = is.search(q, n);
 		retDocs = tds.scoreDocs;
 		Document d;
+		ArrayList<String> results= new ArrayList<String>();
 		for (int i = 0; i < retDocs.length; i++) {
 			d = is.doc(retDocs[i].doc);
-			System.out.println("Doc " + i);
-			System.out.println("Score " + tds.scoreDocs[i].score);
-			System.out.println(d.getField("paraid").stringValue());
-			System.out.println(d.getField("parabody").stringValue() + "\n");
-
+			/*
+			 * System.out.println("Doc " + i); System.out.println("Score " +
+			 * tds.scoreDocs[i].score);
+			 * System.out.println(d.getField("paraid").stringValue());
+			 * System.out.println(d.getField("parabody").stringValue() + "\n");
+			 */
+			/*
+			 * System.out.println(d.getField("parabody").stringValue() + "\n");
+			 */			
+			results.add(d.getField("parabody").stringValue());
 		}
+		return results;
 	}
 
 	public void customerScore(boolean custom) throws IOException {
 		customScore = custom;
 	}
 
-	public static void main(String[] args) throws CborException, IOException, ParseException {
-		CreateIndex a = new CreateIndex();
-		int topSearch = 10;
-
-			a.indexAllParas();
-			a.doSearch("stark", 10);
-
-	}
+	
 
 }
