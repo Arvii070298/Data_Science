@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,8 +21,8 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import assign1.allegiance_csv;
-import assign1.CreateIndex;
+import allegiance_csv;
+import CreateIndex;
 import co.nstant.in.cbor.CborException;
 import co.nstant.in.cbor.model.Array;
 import edu.unh.cs.treccar_v2.Data;
