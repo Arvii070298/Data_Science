@@ -137,19 +137,7 @@ Y_test = final_test['DwD']
 # In[328]:
 
 
-from sklearn.model_selection import train_test_split
 
-
-# In[329]:
-
-
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=123)
-
-
-# In[330]:
-
-
-X_train.shape, X_test.shape, Y_train.shape, Y_test.shape
 
 
 # In[ ]:
@@ -161,13 +149,6 @@ X_train.shape, X_test.shape, Y_train.shape, Y_test.shape
 # In[331]:
 
 
-X_new = X.drop(['name'], axis=1)
-
-
-# In[332]:
-
-
-X_new
 
 
 # # KMeans Transformer
@@ -233,13 +214,13 @@ pipe = Pipeline([
 # In[336]:
 
 
-pipe.fit(X_new, Y)
+pipe.fit(X_train, Y_train)
 
 
 # In[337]:
 
 
-pipe.score(X_new, Y)
+pipe.score(X_train, Y_train)
 
 
 # In[ ]:
