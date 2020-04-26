@@ -42,7 +42,7 @@ public class Main {
 	private boolean customScore = true;
 	ArrayList<String> books = new ArrayList<String>();
 
-	public void indexAllParas() throws CborException, IOException ,Exception {
+	public void indexAllParas() throws CborException, IOException  {
 
 		Directory indexdir = FSDirectory.open((new File(INDEX_DIR)).toPath());
 		IndexWriterConfig conf = new IndexWriterConfig(new StandardAnalyzer());
@@ -181,7 +181,7 @@ public class Main {
 
 	}
 
-	public static void main(String[] args) throws CborException, IOException, ParseException {
+	public static void main(String[] args) throws CborException, IOException, ParseException , Exception {
 		FileMerge f=new FileMerge();
 		f.do_file(args[3]);
 		Main a = new Main();
