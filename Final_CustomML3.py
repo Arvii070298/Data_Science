@@ -161,13 +161,13 @@ X_train.shape, X_test.shape, Y_train.shape, Y_test.shape
 # In[331]:
 
 
-#X_new = X.drop(['name'], axis=1)
+X_new = X.drop(['name'], axis=1)
 
 
 # In[332]:
 
 
-#X_new
+X_new
 
 
 # # KMeans Transformer
