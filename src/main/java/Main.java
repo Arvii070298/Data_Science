@@ -32,7 +32,7 @@ import org.apache.lucene.store.FSDirectory;
 import co.nstant.in.cbor.CborException;
 import edu.unh.cs.treccar_v2.Data;
 
-public class Main throws Exception{
+public class Main {
 
 	static final String INDEX_DIR = "lucene_index/dir";
 	// static final String CBOR_FILE = "D:/got.cbor";
@@ -42,7 +42,7 @@ public class Main throws Exception{
 	private boolean customScore = true;
 	ArrayList<String> books = new ArrayList<String>();
 
-	public void indexAllParas() throws CborException, IOException {
+	public void indexAllParas() throws CborException, IOException ,Exception {
 
 		Directory indexdir = FSDirectory.open((new File(INDEX_DIR)).toPath());
 		IndexWriterConfig conf = new IndexWriterConfig(new StandardAnalyzer());
