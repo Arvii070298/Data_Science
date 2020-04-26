@@ -1,4 +1,3 @@
-package assign1;
 
 import java.io.File;
 import java.io.FileInputStream;
