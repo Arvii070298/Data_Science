@@ -118,7 +118,7 @@ public class allegiance_predictor {
 		ArrayList<ArrayList<String>> results = new ArrayList<ArrayList<String>>();
 		CreateIndex obj = new CreateIndex();
 		try {
-			obj.indexAllParas();
+			obj.indexAllParas(cbor);
 			count++;
 
 		/*	// count of house names
